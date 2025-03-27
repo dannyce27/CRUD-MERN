@@ -1,6 +1,5 @@
 const branchesController = {};
-import branches from "../models/branches";
-import productmodel from "../models/branches"
+import productmodel from "../models/branches.js"
 
 
 //Select del CRUD 

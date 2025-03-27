@@ -1,6 +1,6 @@
 //import de la libreria express
 import express from "express";
-import ClientsController from "../controllers/ClientesController";
+import ClientsController from "../controllers/ClientesController.js";
 
 //router nos ayuda a cargar los metodos que tendra mi ruta 
 const router = express.Router();

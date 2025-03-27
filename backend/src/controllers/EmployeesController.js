@@ -1,6 +1,6 @@
 const EmployeesController = {};
 
-import productmodel from "../models/Employees"
+import productmodel from "../models/Employees.js"
 
 
 //Select del CRUD 

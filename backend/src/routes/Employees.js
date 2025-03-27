@@ -1,6 +1,6 @@
 //import de la libreria express
 import express from "express";
-import Employees from "../controllers/EmployeesController";
+import Employees from "../controllers/EmployeesController.js";
 
 //router nos ayuda a cargar los metodos que tendra mi ruta 
 const router = express.Router();

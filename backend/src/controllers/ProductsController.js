@@ -1,5 +1,5 @@
 const productsController = {};
-import productmodel from "../models/Products"
+import productmodel from "../models/Products.js"
 
 
 //Select del CRUD 

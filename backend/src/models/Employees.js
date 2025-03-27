@@ -1,4 +1,4 @@
-import {sistema, model, Schema} from "mongoose"
+import { model, Schema} from "mongoose"
 
 const productsSchema = new Schema({
 
@@ -49,7 +49,7 @@ const productsSchema = new Schema({
     },
     isVerified: {
         type: Boolean,
-        require: require
+        require: true
     }
     
 
