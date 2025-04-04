@@ -7,7 +7,8 @@ import branchesRoutes from "./src/routes/branches.js"
 import RegisterEmployes from "./src/routes/RegisterEmployees.js"
 import loginRoutes from "./src/routes/login.js"
 import cookieParser from "cookie-parser";
-import logouteRoutes from "./src/controllers/logout.js"
+
+import registerClientsRoutes from "./src/routes/registerClientsController.js";
 // Creo una constante que es igual a la libreria que importé
 const app = express();
 
@@ -31,8 +32,10 @@ app.use("api/RegisterEmployees", RegisterEmployes);
 
 app.use("api/Login",  loginRoutes)
 
+app.use("api/registerClients", registerClientsRoutes)
 
-app.use("api/Logout", logouteRoutes)
+
+
 
 
 
