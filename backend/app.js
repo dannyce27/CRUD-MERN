@@ -7,6 +7,7 @@ import branchesRoutes from "./src/routes/branches.js"
 import RegisterEmployes from "./src/routes/RegisterEmployees.js"
 import loginRoutes from "./src/routes/login.js"
 import cookieParser from "cookie-parser";
+import PasswordRoute from "./src/routes/recoveryPassword.js";
 
 import registerClientsRoutes from "./src/routes/registerClientsController.js";
 // Creo una constante que es igual a la libreria que importé
@@ -34,7 +35,7 @@ app.use("api/Login",  loginRoutes)
 
 app.use("api/registerClients", registerClientsRoutes)
 
-
+app.use ("api/recoveryPassword", PasswordRoute)
 
 
 
