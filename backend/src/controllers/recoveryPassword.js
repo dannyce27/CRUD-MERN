@@ -65,4 +65,49 @@ import { config } from "../config.js"
     }
  }
 
+ PasswordRecoveryController.verifyCode = async (req, res) => {
+    const  {code} = req.body;
+    try {
+        const token = req.cookies.tokenRecoveryCode
+
+        const decoded  =jsonwebtoken.verify(token, config.JWT.secret)
+
+        if (decoded.code !== code) {
+            return res.json({message: "Invalid Code"})
+            
+            
+        }
+
+        const  newToken  = jsonwebtoken.sign(
+
+            {email: decoded.email,
+             code: decoded.code,
+             userType: decoded.userType,
+             verified: true
+
+
+            },
+            config.JWT.secret,
+            {expiresIn: "20m"}
+        )
+           
+        res.cookie("TokenRecoveryCode", newToken, {maxAge:20*60*1000})
+
+        await sendEmail(
+            email,
+            "your verification code",
+            "hello! remember don forget your password",
+            HTMLRecoverEmail.code
+        )
+
+
+        res.json({message: "Code verified succesfully"})
+        
+    } catch (error) {
+
+        console.log("error" + error)
+        
+    }
+ }
+
  export default PasswordRecoveryController;
