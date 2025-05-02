@@ -7,4 +7,5 @@ router.route("/requestCode").post(PasswordRecoveryController.requestCode);
 router.route("/verifyCode").post(PasswordRecoveryController.verifyCode);
 router.route("/newPassword").post(PasswordRecoveryController.newPassword.apply);
 
+
 export default router;

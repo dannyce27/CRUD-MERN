@@ -125,9 +125,32 @@ import { config } from "../config.js"
         const {email, userType} = decoded;
 
 
-        const hashedPassword = await bcrypt.hash(newPassword, 10)
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+        let updatedUser;
+
+        if (userType == "client") {
+
+            updatedUser = await clientsModel.findOneAndUpdate(
+                {email},
+                {password: hashedPassword},
+                {new: true}
+            )
+            
+        }else if(userType == "employee") {
+
+            updatedUser = await employeesModel.findOneAndUpdate(
+                {email},
+                {password: hashedPassword},
+                {new: true}
+            )
+            
+        }
+
+        res.clearCookie("tokenRecoveryCode");
+
+        res.json({message: "ur password has been updated"})
     } catch (error) {
-        
+        console.log("error" + error)
     }
  }
 
