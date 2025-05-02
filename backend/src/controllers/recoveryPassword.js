@@ -1,5 +1,5 @@
 import jsonwebtoken from "jsonwebtoken"
-import bcrypt  from "bcryptjs"
+import bcrypt, { compareSync }  from "bcryptjs"
 
 import clientsModel from "../models/Clients.js"
 import employeesModel from "../models/Employees.js"
@@ -106,6 +106,27 @@ import { config } from "../config.js"
     } catch (error) {
 
         console.log("error" + error)
+        
+    }
+ };
+ 
+ PasswordRecoveryController.newPassword = async (req, res) => {
+    const {newPassword } = req.body;
+
+    try {
+        const token = req.cokiees.tokenRecoveryCode;
+
+        const decoded = jsonwebtoken.verify(token, config.JWT.secret)
+        
+        if(decoded.verified){
+            return res.json({message: "Code not verified"})
+        }
+
+        const {email, userType} = decoded;
+
+
+        const hashedPassword = await bcrypt.hash(newPassword, 10)
+    } catch (error) {
         
     }
  }
