@@ -8,6 +8,7 @@ import RegisterEmployes from "./src/routes/RegisterEmployees.js"
 import loginRoutes from "./src/routes/login.js"
 import cookieParser from "cookie-parser";
 import PasswordRoute from "./src/routes/recoveryPassword.js";
+import salesRoute from "./src/routes/sales.js"
 
 import registerClientsRoutes from "./src/routes/registerClientsController.js";
 // Creo una constante que es igual a la libreria que importé
@@ -21,21 +22,23 @@ app.use(express.json())
 //Que postman acepte guardar cookies
 app.use(cookieParser())
 
-app.use("api/Products", productsRoutes);
+app.use("/api/Products", productsRoutes);
 
-app.use("api/Clientes", clientsRoutes);
+app.use("/api/Clientes", clientsRoutes);
 
-app.use("api/Employees", employeesRoutes);
+app.use("/api/Employees", employeesRoutes);
 
-app.use("api/Sucursales", branchesRoutes);
+app.use("/api/Sucursales", branchesRoutes);
 
-app.use("api/RegisterEmployees", RegisterEmployes);
+app.use("/api/RegisterEmployees", RegisterEmployes);
 
-app.use("api/Login",  loginRoutes)
+app.use("/api/Login",  loginRoutes)
 
-app.use("api/registerClients", registerClientsRoutes)
+app.use("/api/registerClients", registerClientsRoutes);
 
-app.use ("api/recoveryPassword", PasswordRoute)
+app.use ("/api/recoveryPassword", PasswordRoute);
+
+app.use("/api/sales", salesRoute);
 
 
 
