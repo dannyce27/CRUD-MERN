@@ -1,0 +1,171 @@
+.clients-page {
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  color: #000000;
+  text-align: center;
+}
+
+.clients-header {
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.clients-header h1 {
+  font-size: 2.5rem;
+  color: #00b4d8;
+  margin-bottom: 0.5rem;
+}
+
+.clients-header p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.add-btn {
+  background-color: #00b4d8;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #009ac1;
+}
+
+.add-client-form {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.add-client-form input,
+.add-client-form label {
+  flex: 1 1 45%;
+  font-size: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.save-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background-color: #218838;
+}
+
+.clients-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.client-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+}
+
+.client-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.client-card p {
+  font-size: 0.95rem;
+  margin: 0.3rem 0;
+  color: #333;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #00b4d8;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #009ac1;
+}
+
+.delete-btn {
+  background-color: #000000;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #333333;
+}
+
+.no-clients {
+  font-style: italic;
+  color: #888;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.error-message {
+  color: red;
+}
+
+.success-message {
+  color: green;
+}

@@ -9,6 +9,7 @@ import loginRoutes from "./src/routes/login.js"
 import cookieParser from "cookie-parser";
 import PasswordRoute from "./src/routes/recoveryPassword.js";
 import salesRoute from "./src/routes/sales.js"
+import cors from "cors";
 
 import registerClientsRoutes from "./src/routes/registerClientsController.js";
 // Creo una constante que es igual a la libreria que importé
@@ -18,13 +19,14 @@ const app = express();
 app.use(express.json())
 //Definir las rutas de las funciones que tendra la app 
 
+app.use(cors());
 
 //Que postman acepte guardar cookies
 app.use(cookieParser())
 
 app.use("/api/Products", productsRoutes);
 
-app.use("/api/Clientes", clientsRoutes);
+app.use("/api/clients", clientsRoutes);
 
 app.use("/api/Employees", employeesRoutes);
 
